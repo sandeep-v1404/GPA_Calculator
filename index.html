@@ -14,16 +14,118 @@
       .hide {
         display: none;
       }
+      .modal-body {
+        display: flex;
+        flex-direction: column;
+      }
     </style>
   </head>
   <body class="bg-secondary">
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand">GPA Calculator</a>
       <div class="my-2 my-sm-0">
-        <button class="btn btn-outline-success">Instructions</button>
-        <button class="btn btn-outline-info">About</button>
+        <button
+          class="btn btn-outline-success"
+          data-toggle="modal"
+          data-target="#Instructions"
+        >
+          Instructions
+        </button>
+        <button
+          class="btn btn-outline-info"
+          data-toggle="modal"
+          data-target="#About"
+        >
+          About
+        </button>
       </div>
     </nav>
+    <div
+      class="modal fade"
+      id="Instructions"
+      tabindex="-1"
+      aria-labelledby="InstructionsModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="InstructionsModal">Instructions</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>Made for Sathyabama Students</li>
+              <li>
+                If Total Marks for given subject is 100,Enter the Obtained Marks
+              </li>
+
+              <li>Round the Obtained Marks to 100</li>
+              <li>For Example</li>
+              <ol>
+                <li>If Obtained Marks are 42 out of 50(Total Mark)</li>
+                <li>
+                  Then multiply both Obtained Marks and Total marks with 2
+                </li>
+                <li>To get 84 out of 100</li>
+                <li>Then enter 84 in the "Obtained Marks" Field</li>
+              </ol>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="About"
+      tabindex="-1"
+      aria-labelledby="AboutModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="About">About</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <a
+              class="link"
+              href="https://www.linkedin.com/in/sandeep-v-4b01551a4/"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              class="link"
+              href="https://github.com/sandeep-v1404"
+              target="_blank"
+              >GitHub</a
+            >
+            <a
+              class="link"
+              href="https://www.instagram.com/sandy._.the_ace/"
+              target="_blank"
+              >Instagram</a
+            >
+            <p>© 2020 Sandeep V @coding.tech</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="wrapper ml-5 mr-5 mb-2">
       <form>
         <div class="form-row mt-3">
@@ -102,7 +204,7 @@
         </div>
         <div class="col-lg-3 col-md-3 m-auto">
           <input
-            onclick="Print('printArea')"
+            onclick="Print()"
             type="button"
             id="screenShot"
             class="hide btn btn-warning btn-block mb-2"
@@ -122,4 +224,19 @@
     </div>
   </body>
   <script src="main.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"
+  ></script>
 </html>

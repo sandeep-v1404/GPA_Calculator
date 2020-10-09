@@ -15,15 +15,17 @@ const clear = document.querySelector("#clear");
 const screenShot = document.querySelector("#screenShot");
 
 let arr = [];
-function Print(div) {
-  var printContents = document.getElementById(div).innerHTML;
-  var originalContents = document.body.innerHTML;
 
-  document.body.innerHTML = printContents;
+function Print() {
+  // var printContents = document.getElementById(div).innerHTML;
+  // var originalContents = document.body.innerHTML;
+
+  // document.body.innerHTML = printContents;
 
   window.print();
 
-  document.body.innerHTML = originalContents;
+  // document.body.innerHTML = originalContents;
+  ClearAll();
 }
 
 function addSubject() {

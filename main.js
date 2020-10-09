@@ -25,7 +25,6 @@ function Print() {
   window.print();
 
   // document.body.innerHTML = originalContents;
-  ClearAll();
 }
 
 function addSubject() {

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPA calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <style>
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-secondary">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand">GPA Calculator</a>
+      <div class="my-2 my-sm-0">
+        <button class="btn btn-outline-success">Instructions</button>
+        <button class="btn btn-outline-info">About</button>
+      </div>
+    </nav>
+    <div class="wrapper ml-5 mr-5 mb-2">
+      <form>
+        <div class="form-row mt-3">
+          <div class="col-sm mb-2">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Subject Name"
+              id="subject__name"
+            />
+          </div>
+          <div class="col-sm mb-2">
+            <input
+              min="0"
+              type="number"
+              class="form-control"
+              placeholder="Obtained Marks "
+              id="subject__omarks"
+            />
+          </div>
+          <div class="col-sm mb-3">
+            <input
+              min="0"
+              type="number"
+              class="form-control"
+              placeholder="Credits"
+              id="subject__credits"
+            />
+          </div>
+          <div class="col-sm col-md-2 mb-2 text-center">
+            <input
+              onclick="addSubject()"
+              type="button"
+              id="add"
+              class="btn btn-info btn-block"
+              value="Add"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="printArea" class="wrapper m-5">
+      <table id="table" class="table table-striped table-dark hide">
+        <thead>
+          <tr>
+            <th scope="col">Subject Name</th>
+            <th scope="col">Marks Obtained</th>
+            <th scope="col">Points</th>
+            <th scope="col">Credits</th>
+          </tr>
+        </thead>
+
+        <tbody id="tbody"></tbody>
+      </table>
+      <div
+        id="totalCredits"
+        class="alert alert-success hide text-center ml-5 mr-5 mt-3 p-2"
+        role="alert"
+      ></div>
+      <div
+        id="GPA"
+        class="alert hide text-center mt-3 ml-5 mr-5 p-2 alert-warning"
+        role="alert"
+      ></div>
+    </div>
+    <div class="wrapper m-5">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 m-auto">
+          <input
+            onclick="calculator()"
+            type="button"
+            id="calculate"
+            class="hide btn btn-primary btn-block mb-2"
+            value="Calculate"
+          />
+        </div>
+        <div class="col-lg-3 col-md-3 m-auto">
+          <input
+            onclick="Print('printArea')"
+            type="button"
+            id="screenShot"
+            class="hide btn btn-warning btn-block mb-2"
+            value="Print"
+          />
+        </div>
+        <div class="col-lg-3 col-md-3 m-auto">
+          <input
+            onclick="ClearAll()"
+            type="button"
+            id="clear"
+            class="hide btn btn-danger btn-block mb-2"
+            value="Clear"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>

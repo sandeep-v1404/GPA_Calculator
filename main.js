@@ -1,3 +1,6 @@
+const studentName = document.querySelector("#student__name");
+const registerNumber = document.querySelector("#register__number");
+
 const add = document.querySelector("#add");
 const subName = document.querySelector("#subject__name");
 const subObtMarks = document.querySelector("#subject__omarks");
@@ -5,8 +8,11 @@ const subObtMarks = document.querySelector("#subject__omarks");
 const subCredits = document.querySelector("#subject__credits");
 
 const tbody = document.querySelector("#tbody");
+
 const totalCredits = document.querySelector("#totalCredits");
 const GPAHeading = document.querySelector("#GPA");
+const studentNameHeading = document.querySelector("#studentName");
+const registerNumberHeading = document.querySelector("#registerNumber");
 
 const table = document.querySelector("#table");
 
@@ -21,20 +27,47 @@ function Print() {
   // var originalContents = document.body.innerHTML;
 
   // document.body.innerHTML = printContents;
-
+  subName.classList.add("hide");
+  subObtMarks.classList.add("hide");
+  subCredits.classList.add("hide");
+  add.classList.add("hide");
+  calculate.classList.add("hide");
+  clear.classList.add("hide");
+  screenShot.classList.add("hide");
   window.print();
-
+  subName.classList.remove("hide");
+  subObtMarks.classList.remove("hide");
+  subCredits.classList.remove("hide");
+  add.classList.remove("hide");
+  calculate.classList.remove("hide");
+  clear.classList.remove("hide");
+  screenShot.classList.remove("hide");
   // document.body.innerHTML = originalContents;
 }
 
 function addSubject() {
   if (
+    studentName.value == "" ||
+    registerNumber.value == "" ||
+    registerNumber.value.length < 8
+  ) {
+    alert("Enter the Correct Details of Student");
+  } else if (
     subName.value == "" ||
     subObtMarks.value == "" ||
+    subObtMarks.value >= 100 ||
     subCredits.value == ""
   ) {
-    alert("Enter all Details of Subject");
+    alert("Enter all Correct Details of Subject");
   } else {
+    studentNameHeading.innerHTML = "Student Name: " + studentName.value;
+    registerNumberHeading.innerHTML =
+      "Register Number: " + registerNumber.value;
+    studentNameHeading.classList.remove("hide");
+    registerNumberHeading.classList.remove("hide");
+
+    studentName.classList.add("hide");
+    registerNumber.classList.add("hide");
     const tr = document.createElement("tr");
 
     const tdsubName = document.createElement("td");
@@ -82,8 +115,6 @@ function addSubject() {
     subName.value = "";
     subObtMarks.value = "";
     subCredits.value = "";
-
-    console.log(arr);
   }
 }
 function calculator() {
@@ -98,7 +129,7 @@ function calculator() {
   GPAHeading.classList.remove("hide");
 
   totalCredits.innerHTML = `Total Credits : ${sumofCredits}`;
-  GPAHeading.innerHTML = `GPA : ${GPA}`;
+  GPAHeading.innerHTML = `GPA : ${GPA.toFixed(4)}`;
 }
 
 function ClearAll() {
@@ -110,4 +141,10 @@ function ClearAll() {
   calculate.classList.add("hide");
   clear.classList.add("hide");
   screenShot.classList.add("hide");
+  studentNameHeading.classList.add("hide");
+  registerNumberHeading.classList.add("hide");
+  studentName.classList.remove("hide");
+  registerNumber.classList.remove("hide");
+  studentName.value = "";
+  registerNumber.value = "";
 }

@@ -97,13 +97,13 @@ function addSubject() {
     tdsubCredits.innerHTML = subCredits.value;
     tr.appendChild(tdsubName);
     tr.appendChild(tdsubObtMarks);
-    tr.appendChild(tdGPoints);
     tr.appendChild(tdsubCredits);
+    tr.appendChild(tdGPoints);
+
     tbody.appendChild(tr);
     table.classList.remove("hide");
     calculate.classList.remove("hide");
     clear.classList.remove("hide");
-    screenShot.classList.remove("hide");
 
     arr.push({
       subName: subName.value,
@@ -127,6 +127,7 @@ function calculator() {
   const GPA = sumofProductofCreditsAndGPoints / sumofCredits;
   totalCredits.classList.remove("hide");
   GPAHeading.classList.remove("hide");
+  screenShot.classList.remove("hide");
 
   totalCredits.innerHTML = `Total Credits : ${sumofCredits}`;
   GPAHeading.innerHTML = `GPA : ${GPA.toFixed(4)}`;

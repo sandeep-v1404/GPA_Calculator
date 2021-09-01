@@ -55,7 +55,7 @@ function addSubject() {
   } else if (
     subName.value == "" ||
     subObtMarks.value == "" ||
-    subObtMarks.value >= 100 ||
+    subObtMarks.value > 100 ||
     subCredits.value == ""
   ) {
     alert("Enter all Correct Details of Subject");

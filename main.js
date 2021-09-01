@@ -49,7 +49,7 @@ function addSubject() {
   if (
     studentName.value == "" ||
     registerNumber.value == "" ||
-    registerNumber.value.length < 8
+    registerNumber.value.length !== 8
   ) {
     alert("Enter the Correct Details of Student");
   } else if (

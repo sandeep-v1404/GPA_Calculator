@@ -125,134 +125,137 @@
         </div>
       </div>
     </div>
-    <div class="wrapper ml-5 mr-5 mb-2">
-      <form>
-        <div class="form-row mt-3">
-          <div class="col-sm mb-2">
-            <input
-              type="number"
-              min="0"
-              minlength="8"
-              class="form-control"
-              placeholder="Register Number"
-              id="register__number"
-            />
+    <div class="container mx-auto">
+      <div class="wrapper ml-5 mr-5 mb-2">
+        <form>
+          <div class="form-row mt-3">
+            <div class="col-sm mb-2">
+              <input
+                type="number"
+                min="0"
+                minlength="8"
+                class="form-control"
+                placeholder="Register Number"
+                id="register__number"
+                autofocus
+              />
+            </div>
+            <div class="col-sm mb-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Student Name"
+                id="student__name"
+              />
+            </div>
           </div>
-          <div class="col-sm mb-2">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Student Name"
-              id="student__name"
-            />
+          <div class="form-row mt-3">
+            <div
+              id="registerNumber"
+              class="alert hide text-center alert-danger col-sm ml-2 mr-2 mb-2"
+              role="alert"
+            ></div>
+            <div
+              id="studentName"
+              class="alert alert-primary hide text-center col-sm ml-2 mr-2 mb-2"
+              role="alert"
+            ></div>
           </div>
-        </div>
-        <div class="form-row mt-3">
-          <div
-            id="registerNumber"
-            class="alert hide text-center alert-danger col-sm ml-2 mr-2 mb-2"
-            role="alert"
-          ></div>
-          <div
-            id="studentName"
-            class="alert alert-primary hide text-center col-sm ml-2 mr-2 mb-2"
-            role="alert"
-          ></div>
-        </div>
-      </form>
-    </div>
-    <div id="printArea" class="m-md-5 p-2 table-responsive-md">
-      <table id="table" class="table table-striped table-dark">
-        <thead>
-          <tr>
-            <th scope="col">Subject Name</th>
-            <th scope="col">Marks Obtained</th>
-            <th scope="col">Credits</th>
-            <th scope="col">Grade Points</th>
-          </tr>
-        </thead>
-
-        <tbody id="tbody"></tbody>
-      </table>
-      <form>
-        <div class="form-row mt-3">
-          <div class="col-sm mb-2">
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Subject Name"
-              id="subject__name"
-            />
+        </form>
+      </div>
+      <div id="printArea" class="m-md-5 p-2 table-responsive-md">
+        <table id="table" class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Subject Name</th>
+              <th scope="col">Marks Obtained</th>
+              <th scope="col">Credits</th>
+              <th scope="col">Grade Points</th>
+            </tr>
+          </thead>
+  
+          <tbody id="tbody"></tbody>
+        </table>
+        <form>
+          <div class="form-row mt-3">
+            <div class="col-sm mb-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Subject Name"
+                id="subject__name"
+              />
+            </div>
+            <div class="col-sm mb-2">
+              <input
+                min="0"
+                max="100"
+                type="number"
+                class="form-control"
+                placeholder="Obtained Marks "
+                id="subject__omarks"
+              />
+            </div>
+            <div class="col-sm mb-3">
+              <input
+                min="0"
+                type="number"
+                class="form-control"
+                placeholder="Credits"
+                id="subject__credits"
+              />
+            </div>
+            <div class="col-sm col-md-2 mb-2 text-center">
+              <input
+                onclick="addSubject()"
+                type="button"
+                id="add"
+                class="btn btn-info btn-block"
+                value="Add"
+              />
+            </div>
           </div>
-          <div class="col-sm mb-2">
+        </form>
+        <div
+          id="totalCredits"
+          class="alert alert-success hide text-center ml-4 mr-4 mt-3 p-2"
+          role="alert"
+        ></div>
+        <div
+          id="GPA"
+          class="alert hide text-center mt-3 ml-5 mr-5 p-2 alert-warning"
+          role="alert"
+        ></div>
+      </div>
+      <div class="wrapper m-5 pl-3 pr-3">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 m-auto">
             <input
-              min="0"
-              max="100"
-              type="number"
-              class="form-control"
-              placeholder="Obtained Marks "
-              id="subject__omarks"
-            />
-          </div>
-          <div class="col-sm mb-3">
-            <input
-              min="0"
-              type="number"
-              class="form-control"
-              placeholder="Credits"
-              id="subject__credits"
-            />
-          </div>
-          <div class="col-sm col-md-2 mb-2 text-center">
-            <input
-              onclick="addSubject()"
+              onclick="calculator()"
               type="button"
-              id="add"
-              class="btn btn-info btn-block"
-              value="Add"
+              id="calculate"
+              class="hide btn btn-primary btn-block mb-2"
+              value="Calculate"
             />
           </div>
-        </div>
-      </form>
-      <div
-        id="totalCredits"
-        class="alert alert-success hide text-center ml-4 mr-4 mt-3 p-2"
-        role="alert"
-      ></div>
-      <div
-        id="GPA"
-        class="alert hide text-center mt-3 ml-5 mr-5 p-2 alert-warning"
-        role="alert"
-      ></div>
-    </div>
-    <div class="wrapper m-5 pl-3 pr-3">
-      <div class="row">
-        <div class="col-lg-3 col-md-3 m-auto">
-          <input
-            onclick="calculator()"
-            type="button"
-            id="calculate"
-            class="hide btn btn-primary btn-block mb-2"
-            value="Calculate"
-          />
-        </div>
-        <div class="col-lg-3 col-md-3 m-auto">
-          <input
-            onclick="Print()"
-            type="button"
-            id="screenShot"
-            class="hide btn btn-warning btn-block mb-2"
-            value="Print"
-          />
-        </div>
-        <div class="col-lg-3 col-md-3 m-auto">
-          <input
-            onclick="ClearAll()"
-            type="button"
-            id="clear"
-            class="hide btn btn-danger btn-block mb-2"
-            value="Clear All"
-          />
+          <div class="col-lg-3 col-md-3 m-auto">
+            <input
+              onclick="Print()"
+              type="button"
+              id="screenShot"
+              class="hide btn btn-warning btn-block mb-2"
+              value="Print"
+            />
+          </div>
+          <div class="col-lg-3 col-md-3 m-auto">
+            <input
+              onclick="ClearAll()"
+              type="button"
+              id="clear"
+              class="hide btn btn-danger btn-block mb-2"
+              value="Clear All"
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPA calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <style>
+      .hide {
+        display: none;
+      }
+      .modal-body {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body class="bg-secondary">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand">GPA Calculator</a>
+      <div class="my-2 my-sm-0">
+        <button 
+        onclick="location.href = 'index.html';" 
+        id="myButton" 
+        class="btn btn-outline-success" 
+        >
+        Calculator
+    </button>
+        <button
+          class="btn btn-outline-info"
+          data-toggle="modal"
+          data-target="#About"
+        >
+          About
+        </button>
+      </div>
+    </nav>
+          <div class="modal-body">
+              <style>
+                  p {
+ text-align:center;
+ color: white;
+}
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    padding-top: 40px;
+}
+h3 {
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    padding-top: 40px;
+}
+h4 {
+    text-align: center;
+    color: white;
+    font-size: 45px;
+    padding-top: 40px;
+}
+              </style>
+              <h1>Welcome - GPA Calculator</h1>
+        
+             <h3>Made for Sathyabama Students</h3>
+             <br>
+             <h4>How to Use:</h4>
+             <br>
+            <p>If Total Marks for given subject is 100, Enter the Obtained Marks
+
+             <br>If Total Marks for given subject is 50, Follow below steps
+             
+             <br>If Obtained Marks are 42 out of 50(Total Mark)
+                
+             <br>Then multiply both Obtained Marks and Total marks with 2
+                
+             <br>To get 84 out of 100
+             <br>Then enter 84 in the "Obtained Marks" Field
+            
+           </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  
+    <div class="container">
+        <div class="center">
+    <button 
+        onclick="location.href = 'index.html';" 
+        id="myButton" 
+        class="button btn-outline-success" 
+        >
+        Go to Calculator
+    </button>
+</div>
+</div>
+    <style>
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  
+}
+    </style>
+    <div
+      class="modal fade"
+      id="About"
+      tabindex="-1"
+      aria-labelledby="AboutModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="About">About</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <a
+              class="link"
+              href="https://www.linkedin.com/in/sandeep-v-4b01551a4/"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              class="link"
+              href="https://github.com/sandeep-v1404"
+              target="_blank"
+              >GitHub</a
+            >
+            <a
+              class="link"
+              href="https://www.instagram.com/sandy._.the_ace/"
+              target="_blank"
+              >Instagram</a
+            >
+            <p>© 2020 Sandeep V @coding.tech</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"
+  ></script>
+</html>
